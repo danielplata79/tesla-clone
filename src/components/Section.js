@@ -1,25 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade'
 
 function Section({ title, rightBtnText, leftBtnText, description, backgroundImg }) {
 
   return (
     <Wrap bgImage={backgroundImg}>
-       <ItemText>
-         <h1>{ title }</h1>
-         <p>{ description }</p>
-       </ItemText>
+       <Fade bottom>
+         <ItemText>
+           <h1>{ title }</h1>
+           <p>{ description }</p>
+         </ItemText>
+       </Fade>
         <Buttons>
-         <ButtonGroup>
-              <LeftButton>
-                 { leftBtnText } 
-              </LeftButton>
-
-              <RightButton>
-                  { rightBtnText }
-              </RightButton>
-         </ButtonGroup>
-
+           <Fade bottom>
+             <ButtonGroup>
+                <LeftButton>
+                   { leftBtnText } 
+                </LeftButton>
+    
+                { rightBtnText &&
+                  <RightButton>
+                    { rightBtnText }
+                  </RightButton>
+                }
+             </ButtonGroup>
+            </Fade>
          <DownArrow src="/images/down-arrow.svg" />
        </Buttons>
     </Wrap>
@@ -68,12 +74,37 @@ const LeftButton = styled.div`
     font-size: 12px;
     cursor: pointer;
     margin: 8px;
+
+    -webkit-box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
+
+    &:hover {
+        color: orange;
+        opacity: 1;
+        -webkit-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.75);
+    }
+    &:focus {
+        color: red;
+    }
+    &:active {
+        color: blue;
+    }
 `
 
 const RightButton = styled(LeftButton)`
     background: white;
     opacity: 0.65;
     color: black;
+
+    &:hover {
+        opacity: 1;
+        color: black;
+        background: lightgray;
+x
+    }
 `
 
 const DownArrow = styled.img`
