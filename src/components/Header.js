@@ -2,43 +2,50 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { selectCars } from '../features/car/carSlice';
+import { useSelector } from 'react-redux';
 
 function Header() {
   const [ burgerStatus, setBurgerStatus ] = useState(false);
+  const cars = useSelector(selectCars)
+  console.log(cars)
 
   return (
     <Container>
-      <a href="#">
-        <img src="/images/logo.svg" alt="logo"/>
-      </a>
+      <Logo>
+       <a href="#">
+         <img src="/images/logo.svg" alt="logo"/>
+       </a>
+      </Logo>
 
       <Menu>
-        <a href="#">Model S</a>
-        <a href="#">Model Y</a>
-        <a href="#">Model 3</a>
-        <a href="#">Model X</a>
+        {cars && cars.map((car,index)=> (
+          <a href='#'>{car}</a>
+        ))}
       </Menu>
-
       <RightMenu>
         <a href="#">Shop</a>
         <a href="#">Tesla</a>
         <a href="#">Account</a>
 
         <CustomMenu onClick={()=>setBurgerStatus(true)}> </CustomMenu>
+
+        <BurgerNav show={burgerStatus}>
+          <CloseWrapper>
+            <CustomClose onClick={()=>setBurgerStatus(false)}></CustomClose>
+          </CloseWrapper>
+
+          {cars && cars.map((car,index) => (
+            <li><a href='#'>{car}</a></li>
+          ))}
+
+          <li><a href='#'>Existing Inventory</a></li>
+          <li><a href='#'>Used Inventory</a></li>
+          <li><a href='#'>Trade-in</a></li>
+          <li><a href='#'>Cybertruck</a></li>
+          <li><a href='#'>Roadster</a></li>
+        </BurgerNav>
       </RightMenu>
-
-      <BurgerNav show={burgerStatus}>
-        <CloseWrapper>
-          <CustomClose onClick={()=>setBurgerStatus(false)}></CustomClose>
-        </CloseWrapper>
-
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Used Inventory</a></li>
-        <li><a href='#'>Trade-in</a></li>
-        <li><a href='#'>Cybertruck</a></li>
-        <li><a href='#'>Roadster</a></li>
-      </BurgerNav>
-
     </Container>
   )
 }
@@ -60,7 +67,7 @@ const Container = styled.div`
 
 const Menu = styled.div`
   display: flex;
-  align-items: center;G
+  align-items: center;
   justify-content: center;
   flex: 1;
   
@@ -68,14 +75,14 @@ const Menu = styled.div`
     font-weight: 600;
     text-transform: uppercase;
     padding: 0 10px;
-    flex-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
-  @media(max-width: 768px) {
+  @media(max-width: 1197px) {
     display: none;          
   }
 `
-
 
 const RightMenu = styled.div`
   display : flex;
@@ -98,11 +105,12 @@ const BurgerNav = styled.div`
   background: white;
   width: 300px;
   list-style: none;
-  padding: 20px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   text-align: start;
   transform: ${props => props.show ? 'translateX(0)': 'translate(100%)'};
+  transition: transform 0.2s ease-in;
 
   li {
     padding: 15px 0;
@@ -121,4 +129,16 @@ const CustomClose = styled(CloseIcon)`
 const CloseWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+`
+
+const Logo = styled.div`
+  width: 300px;
+
+  @media (max-width: 1197px) {
+    width: 150px;
+  }
+
+  @media (max-width: 710px) {
+    width: 80px;
+  }
 `
