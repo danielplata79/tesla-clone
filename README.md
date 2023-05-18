@@ -6,8 +6,8 @@
 <br>
 
 <h3>Education purposes repository.🎓🧱 </h3>
-Tesla Web Page 2021-2023 Clone using React, implementing [MUI](https://mui.com/) for building the UI.<br>
-<b>Project live-deployed & and working ✔ on Netlify</b>, visit at : [Tesla Web Clone](https://tesla-webclonedp.netlify.app) or https://tesla-webclonedp.netlify.app
+Tesla Web Page 2021-2023 Clone using React, implementing <a href="https://mui.com/">MUI</a> for building the UI.<br>
+<b>Project live-deployed & and working ✔ on Netlify</b>, visit at : <a href="https://tesla-webclonedp.netlify.app">Tesla Web Clone</a> or <a href="https://tesla-webclonedp.netlify.app">https://tesla-webclonedp.netlify.app</a>
 <hr>
 <br>
 <img src="/public/preview1.png">
