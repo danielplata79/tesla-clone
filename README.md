@@ -11,5 +11,5 @@ Tesla Web Page 2021-2023 Clone using React, implementing <a href="https://mui.co
 <hr>
 <br>
 <img src="/public/preview1.png">
-<br>br>
+<br>
 <img src="/public/preview2.png">
