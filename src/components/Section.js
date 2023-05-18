@@ -82,10 +82,9 @@ const LeftButton = styled.div`
     &:hover {
         color: orange;
         opacity: 1;
-        -webkit-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.55);
-        -moz-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.55);
-        box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.55);
-        transition: 0.2s;
+        -webkit-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.75);
     }
     &:focus {
         color: red;

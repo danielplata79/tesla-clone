@@ -77,6 +77,13 @@ const Menu = styled.div`
     padding: 0 10px;
     overflow: hidden;
     white-space: nowrap;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      color: white;
+      border-radius: 3px;
+    }
   }
 
   @media(max-width: 1197px) {
@@ -92,6 +99,15 @@ const RightMenu = styled.div`
     font-weight: 600;
     text-transform: uppercase;
     margin-right: 10px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      color: white;
+      border-radius: 3px;
+      padding: 0 5px;
+    }
+
   }
 `
 const CustomMenu = styled(MenuIcon)`
@@ -111,6 +127,9 @@ const BurgerNav = styled.div`
   text-align: start;
   transform: ${props => props.show ? 'translateX(0)': 'translate(100%)'};
   transition: transform 0.2s ease-in;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
 
   li {
     padding: 15px 0;
