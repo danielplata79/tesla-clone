@@ -1,8 +1,7 @@
-<h1 align="center"> Tesla Web Clone <img src="/public/teslalogo"> <br> build with React Redux </h1>
+<h1 align="center"> Tesla Web Clone <img src="/public/images/favicon.ico"> <br> build with React Redux </h1>
   <br><br>
 <p align="center">
   <img src="/public/logo512.png" height="200" width="200">
-  <img src="/public/reactlogo.png" height="200" width="200">
   </p>
 <br>
 
